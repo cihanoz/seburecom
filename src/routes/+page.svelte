@@ -1,13 +1,8 @@
 <script>
 	import BackToTop from "$lib/components/BackToTop.svelte";
-	import DarkModeSwitch from "$lib/components/DarkModeSwitch.svelte";
 	import Footer from "$lib/components/Footer.svelte";
 	import Hero from "$lib/components/Hero.svelte";
 	import Loader from "$lib/components/Loader.svelte";
-	import LoginButton from "$lib/components/LoginButton.svelte";
-import Logo from "$lib/components/Logo.svelte";
-	import LtrRtlSwitch from "$lib/components/LtrRtlSwitch.svelte";
-	import MobileToggle from "$lib/components/MobileToggle.svelte";
 	import Navbar from "$lib/components/Navbar.svelte";
 	import Slider from "$lib/components/Slider.svelte";
 	import Triplets from "$lib/components/Triplets.svelte";
@@ -270,8 +265,5 @@ import Logo from "$lib/components/Logo.svelte";
 
         <Footer />
         
-        <DarkModeSwitch />
-
-        <LtrRtlSwitch />
 
         <BackToTop />

@@ -4,6 +4,7 @@ import { writable } from 'svelte/store';
 
 const defaultValue: GlobalStore = {
   darkMode: false,
+  mobileNavOpen: false,
   svgLogo: '/alsaki-logo.svg',
   svgLogoDarkMode: '/alsaki-logo-darkmode.svg'
 };

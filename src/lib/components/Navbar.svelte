@@ -1,10 +1,106 @@
-<script>
+<script lang="ts">
 	import LoginButton from "./LoginButton.svelte";
 	import Logo from "./Logo.svelte";
 	import MobileToggle from "./MobileToggle.svelte";
+	import NavbarDropdownImages from "./NavbarDropdownImages.svelte";
+	import NavbarItemSimple from "./NavbarItemSimple.svelte";
+	import globalStore from '$lib/stores/gloabalStore';
+
+    // const navData = {
+    //     label: 'Home',
+    //     url: '/',
+    //     columns: [
+    //         {
+    //             items: [
+    //                 {
+    //                     label: 'Hero One',
+    //                     href: '/hero-one',
+    //                     image: '/images/demos/hero-one.png',
+    //                 },
+    //                 {
+    //                     label: 'Hero Two',
+    //                     href: '/hero-two',
+    //                     image: '/images/demos/hero-two.png',
+    //                 },
+    //             ]
+    //         },
+    //         {
+    //             items: [
+    //                 {
+    //                     label: 'Hero Three',
+    //                     href: '/hero-three',
+    //                     image: '/images/demos/hero-three.png',
+    //                 },
+    //                 {
+    //                     label: 'Hero Four',
+    //                     href: '/hero-four',
+    //                     image: '/images/demos/hero-four.png',
+    //                 },
+    //             ]
+    //         },
+    //         {
+    //             items: [
+    //                 {
+    //                     label: 'Hero Five',
+    //                     href: '/hero-five',
+    //                     image: '/images/demos/hero-five.png',
+    //                 },
+    //                 {
+    //                     label: 'Hero Six',
+    //                     href: '/hero-six',
+    //                     image: '/images/demos/hero-six.png',
+    //                 },
+    //             ]
+    //         },
+    //         {
+    //             items: [
+    //                 {
+    //                     label: 'Hero Seven',
+    //                     href: '/hero-seven',
+    //                     image: '/images/demos/hero-seven.png',
+    //                 },
+    //                 {
+    //                     label: 'Hero Eight',
+    //                     href: '/hero-eight',
+    //                     image: '/images/demos/hero-eight.png',
+    //                 },
+    //             ]
+    //         },
+    //         {
+    //             items: [
+    //                 {
+    //                     label: 'Hero Nine',
+    //                     href: '/hero-nine',
+    //                     image: '/images/demos/hero-nine.png',
+    //                 },
+    //                 {
+    //                     label: 'Hero Ten',
+    //                     href: '/hero-ten',
+    //                     image: '/images/demos/hero-ten.png',
+    //                 },
+    //             ]
+    //         }
+    //     ]
+    // }
+
+    let navbar: HTMLElement | null = null;
+    let scrollY: number = 0;
+    let sticky: boolean = false;
+    const windowScroll = () => {
+        if (navbar != null) {
+            if (scrollY >= 50) {
+                sticky = true;
+            } else {
+                sticky = false;
+            }
+        }
+    }
 </script>
+
+<svelte:window bind:scrollY={scrollY} on:scroll={windowScroll} />
+
 <!-- Start Navbar -->
-<nav id="topnav" class="defaultscroll is-sticky">
+<nav bind:this={navbar} id="topnav" class="defaultscroll" class:nav-sticky={sticky}>
     <div class="container relative">
         <Logo />
 
@@ -12,215 +108,25 @@
 
         <LoginButton />
 
-        <div id="navigation">
+        <div id="navigation" class:toggle-open={$globalStore.mobileNavOpen} class:toggle-close={!$globalStore.mobileNavOpen}>
             <!-- Navigation Menu-->   
             <ul class="navigation-menu justify-end nav-light">
-                <li class="has-submenu parent-parent-menu-item">
-                    <!-- svelte-ignore a11y_invalid_attribute -->
-                    <a href="#">Home</a><span class="menu-arrow"></span>
-
-                    <ul class="submenu megamenu">
-                        <li>
-                            <ul>
-                                <li>
-                                    <a href="index.html" class="sub-menu-item">
-                                        <div class="lg:text-center">
-                                            <span class="none lg:block"><img src="/images/demos/hero-one.png" class="img-fluid rounded shadow-md" alt=""></span>
-                                            <span class="lg:mt-2 block">Hero One</span>
-                                        </div>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="index-two.html" class="sub-menu-item">
-                                        <div class="lg:text-center">
-                                            <span class="none lg:block"><img src="/images/demos/hero-two.png" class="img-fluid rounded shadow-md" alt=""></span>
-                                            <span class="lg:mt-2 block">Hero Two</span>
-                                        </div>
-                                    </a>
-                                </li>
-                            </ul>
-                        </li>
-
-                        <li>
-                            <ul>
-                                <li>
-                                    <a href="index-three.html" class="sub-menu-item">
-                                        <div class="lg:text-center">
-                                            <span class="none lg:block"><img src="/images/demos/hero-three.png" class="img-fluid rounded shadow-md" alt=""></span>
-                                            <span class="lg:mt-2 block">Hero Three</span>
-                                        </div>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="index-four.html" class="sub-menu-item">
-                                        <div class="lg:text-center">
-                                            <span class="none lg:block"><img src="/images/demos/hero-four.png" class="img-fluid rounded shadow-md" alt=""></span>
-                                            <span class="lg:mt-2 block">Hero Four</span>
-                                        </div>
-                                    </a>
-                                </li>
-                            </ul>
-                        </li>
-
-                        <li>
-                            <ul>
-                                <li>
-                                    <a href="index-five.html" class="sub-menu-item">
-                                        <div class="lg:text-center">
-                                            <span class="none lg:block"><img src="/images/demos/hero-five.png" class="img-fluid rounded shadow-md" alt=""></span>
-                                            <span class="lg:mt-2 block">Hero Five</span>
-                                        </div>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="index-six.html" class="sub-menu-item">
-                                        <div class="lg:text-center">
-                                            <span class="none lg:block"><img src="/images/demos/hero-six.png" class="img-fluid rounded shadow-md" alt=""></span>
-                                            <span class="lg:mt-2 block">Hero Six</span>
-                                        </div>
-                                    </a>
-                                </li>
-                            </ul>
-                        </li>
-        
-                        <li>
-                            <ul>
-                                <li>
-                                    <a href="index-seven.html" class="sub-menu-item">
-                                        <div class="lg:text-center">
-                                            <span class="none lg:block"><img src="/images/demos/hero-seven.png" class="img-fluid rounded shadow-md" alt=""></span>
-                                            <span class="lg:mt-2 block">Hero Seven</span>
-                                        </div>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="index-eight.html" class="sub-menu-item">
-                                        <div class="lg:text-center">
-                                            <span class="none lg:block"><img src="/images/demos/hero-eight.png" class="img-fluid rounded shadow-md" alt=""></span>
-                                            <span class="lg:mt-2 block">Hero Eight</span>
-                                        </div>
-                                    </a>
-                                </li>
-                            </ul>
-                        </li>
-        
-                        <li>
-                            <ul>
-                                <li>
-                                    <a href="index-nine.html" class="sub-menu-item">
-                                        <div class="lg:text-center">
-                                            <span class="none lg:block"><img src="/images/demos/hero-nine.png" class="img-fluid rounded shadow-md" alt=""></span>
-                                            <span class="lg:mt-2 block">Hero Nine</span>
-                                        </div>
-                                    </a>
-                                </li>
-                        
-                                <li>
-                                    <a href="index-ten.html" class="sub-menu-item">
-                                        <div class="lg:text-center">
-                                            <span class="none lg:block"><img src="/images/demos/hero-ten.png" class="img-fluid rounded shadow-md" alt=""></span>
-                                            <span class="lg:mt-2 block">Hero Ten <span class="bg-yellow-500 inline-block text-white text-[10px] font-bold px-2.5 py-0.5 rounded h-5 ms-1">New</span></span>
-                                        </div>
-                                    </a>
-                                </li>
-                            </ul>
-                        </li>
-                    </ul>
-                </li>
-        
-                <li><a href="buy.html" class="sub-menu-item">Buy</a></li>
-        
-                <li><a href="sell.html" class="sub-menu-item">Sell</a></li>
-
-                <li class="has-submenu parent-parent-menu-item">
-                    <!-- svelte-ignore a11y_invalid_attribute -->
-                    <a href="#">Listing</a><span class="menu-arrow"></span>
-                    <ul class="submenu">
-                        <!-- svelte-ignore a11y_invalid_attribute -->
-                        <li class="has-submenu parent-menu-item"><a href="#"> Grid View </a><span class="submenu-arrow"></span>
-                            <ul class="submenu">
-                                <li><a href="grid.html" class="sub-menu-item">Grid Listing</a></li>
-                                <li><a href="grid-sidebar.html" class="sub-menu-item">Grid Sidebar </a></li>
-                                <li><a href="grid-map.html" class="sub-menu-item">Grid With Map</a></li>
-                            </ul> 
-                        </li>
-                        <!-- svelte-ignore a11y_invalid_attribute -->
-                        <li class="has-submenu parent-menu-item"><a href="#"> List View </a><span class="submenu-arrow"></span>
-                            <ul class="submenu">
-                                <li><a href="list.html" class="sub-menu-item">List Listing</a></li>
-                                <li><a href="list-sidebar.html" class="sub-menu-item">List Sidebar </a></li>
-                                <li><a href="list-map.html" class="sub-menu-item">List With Map</a></li>
-                            </ul>  
-                        </li>
-                        <!-- svelte-ignore a11y_invalid_attribute -->
-                        <li class="has-submenu parent-menu-item"><a href="#"> Property Detail</a><span class="submenu-arrow"></span>
-                            <ul class="submenu">
-                                <li><a href="property-detail.html" class="sub-menu-item">Property Detail</a></li>
-                                <li><a href="property-detail-two.html" class="sub-menu-item">Property Detail Two</a></li>
-                            </ul>  
-                        </li>
-                    </ul>
-                </li>
-
-                <li class="has-submenu parent-parent-menu-item">
-                    <!-- svelte-ignore a11y_invalid_attribute -->
-                    <a href="#">Pages</a><span class="menu-arrow"></span>
-                    <ul class="submenu">
-                        <li><a href="aboutus.html" class="sub-menu-item">About Us</a></li>
-                        <li><a href="features.html" class="sub-menu-item">Featues</a></li>
-                        <li><a href="pricing.html" class="sub-menu-item">Pricing</a></li>
-                        <li><a href="faqs.html" class="sub-menu-item">Faqs</a></li>
-                        <!-- svelte-ignore a11y_invalid_attribute -->
-                        <li class="has-submenu parent-menu-item"><a href="#"> Agents</a><span class="submenu-arrow"></span>
-                            <ul class="submenu">
-                                <li><a href="agents.html" class="sub-menu-item">Agents</a></li>
-                                <li><a href="agent-profile.html" class="sub-menu-item">Agent Profile</a></li>
-                            </ul>  
-                        </li>
-                        <!-- svelte-ignore a11y_invalid_attribute -->
-                        <li class="has-submenu parent-menu-item"><a href="#"> Agencies</a><span class="submenu-arrow"></span>
-                            <ul class="submenu">
-                                <li><a href="agencies.html" class="sub-menu-item">Agencies</a></li>
-                                <li><a href="agency-profile.html" class="sub-menu-item">Agency Profile</a></li>
-                            </ul>  
-                        </li>
-                        <!-- svelte-ignore a11y_invalid_attribute -->
-                        <li class="has-submenu parent-menu-item"><a href="#"> Auth Pages </a><span class="submenu-arrow"></span>
-                            <ul class="submenu">
-                                <li><a href="auth-login.html" class="sub-menu-item">Login</a></li>
-                                <li><a href="auth-signup.html" class="sub-menu-item">Signup</a></li>
-                                <li><a href="auth-re-password.html" class="sub-menu-item">Reset Password</a></li>
-                            </ul>  
-                        </li>
-                        <!-- svelte-ignore a11y_invalid_attribute -->
-                        <li class="has-submenu parent-menu-item"><a href="#"> Utility </a><span class="submenu-arrow"></span>
-                            <ul class="submenu">
-                                <li><a href="terms.html" class="sub-menu-item">Terms of Services</a></li>
-                                <li><a href="privacy.html" class="sub-menu-item">Privacy Policy</a></li>
-                            </ul>  
-                        </li>
-                        <!-- svelte-ignore a11y_invalid_attribute -->
-                        <li class="has-submenu parent-menu-item"><a href="#"> Blog </a><span class="submenu-arrow"></span>
-                            <ul class="submenu">
-                                <li><a href="blogs.html" class="sub-menu-item"> Blogs</a></li>
-                                <li><a href="blog-sidebar.html" class="sub-menu-item"> Blog Sidebar</a></li>
-                                <li><a href="blog-detail.html" class="sub-menu-item"> Blog Detail</a></li>
-                            </ul> 
-                        </li>
-                        <!-- svelte-ignore a11y_invalid_attribute -->
-                        <li class="has-submenu parent-menu-item"><a href="#"> Special </a><span class="submenu-arrow"></span>
-                            <ul class="submenu">
-                                <li><a href="comingsoon.html" class="sub-menu-item">Comingsoon</a></li>
-                                <li><a href="maintenance.html" class="sub-menu-item">Maintenance</a></li>
-                                <li><a href="404.html" class="sub-menu-item">404! Error</a></li>
-                            </ul>  
-                        </li>
-                    </ul>
-                </li>
-        
-                <li><a href="contact.html" class="sub-menu-item">Contact</a></li>
+                
+                <!-- <NavbarDropdownImages navData={navData} /> -->
+                <NavbarItemSimple href="/login" label="Login" />
+                <NavbarItemSimple href="/signup" label="Signup" />
             </ul><!--end navigation menu-->
         </div><!--end navigation-->
     </div><!--end container-->
 </nav><!--end header-->
 <!-- End Navbar -->
+
+<style>
+    .toggle-open {
+        display: block;
+    }
+
+    .toggle-close {
+        display: none;
+    }
+</style>

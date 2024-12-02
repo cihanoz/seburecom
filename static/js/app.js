@@ -44,15 +44,15 @@ function fn() {
 /*********************/
 /* Toggle Menu */
 /*********************/
-function toggleMenu() {
-    document.getElementById('isToggle').classList.toggle('open');
-    var isOpen = document.getElementById('navigation')
-    if (isOpen.style.display === "block") {
-        isOpen.style.display = "none";
-    } else {
-        isOpen.style.display = "block";
-    }
-};
+// function toggleMenu() {
+//     document.getElementById('isToggle').classList.toggle('open');
+//     var isOpen = document.getElementById('navigation')
+//     if (isOpen.style.display === "block") {
+//         isOpen.style.display = "none";
+//     } else {
+//         isOpen.style.display = "block";
+//     }
+// };
 /*********************/
 /*    Menu Active    */
 /*********************/
@@ -148,24 +148,24 @@ if (document.getElementById("navigation")) {
 /*********************/
 /*   Menu Sticky     */
 /*********************/
-function windowScroll() {
-    const navbar = document.getElementById("topnav");
-    if (navbar != null) {
-        if (
-            document.body.scrollTop >= 50 ||
-            document.documentElement.scrollTop >= 50
-        ) {
-            navbar.classList.add("nav-sticky");
-        } else {
-            navbar.classList.remove("nav-sticky");
-        }
-    }
-}
+// function windowScroll() {
+//     const navbar = document.getElementById("topnav");
+//     if (navbar != null) {
+//         if (
+//             document.body.scrollTop >= 50 ||
+//             document.documentElement.scrollTop >= 50
+//         ) {
+//             navbar.classList.add("nav-sticky");
+//         } else {
+//             navbar.classList.remove("nav-sticky");
+//         }
+//     }
+// }
 
-window.addEventListener('scroll', (ev) => {
-    ev.preventDefault();
-    windowScroll();
-})
+// window.addEventListener('scroll', (ev) => {
+//     ev.preventDefault();
+//     windowScroll();
+// })
 /*********************/
 /*    Back To TOp    */
 /*********************/
@@ -288,27 +288,27 @@ try {
 /*********************/
 /* Dark & Light Mode */
 /*********************/
-try {
-    function changeTheme(e){
-        e.preventDefault()
-        const htmlTag = document.getElementsByTagName("html")[0]
+// try {
+//     function changeTheme(e){
+//         e.preventDefault()
+//         const htmlTag = document.getElementsByTagName("html")[0]
         
-        if (htmlTag.className.includes("dark")) {
-            htmlTag.className = 'light'
-        } else {
-            htmlTag.className = 'dark'
-        }
-    }
+//         if (htmlTag.className.includes("dark")) {
+//             htmlTag.className = 'light'
+//         } else {
+//             htmlTag.className = 'dark'
+//         }
+//     }
 
-    const switcher = document.getElementById("theme-mode")
-    switcher?.addEventListener("click" ,changeTheme )
+//     const switcher = document.getElementById("theme-mode")
+//     switcher?.addEventListener("click" ,changeTheme )
     
-    const chk = document.getElementById('chk');
+//     const chk = document.getElementById('chk');
 
-    chk.addEventListener('change',changeTheme);
-} catch (err) {
+//     chk.addEventListener('change',changeTheme);
+// } catch (err) {
     
-}
+// }
 
 /*********************/
 /* LTR & RTL Mode */
