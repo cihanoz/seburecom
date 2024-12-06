@@ -2132,6 +2132,7 @@ h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6{
 #topnav .logo{
   --tw-text-opacity: 1 !important;
   color: rgb(22 28 45 / var(--tw-text-opacity)) !important;
+  margin-top: 0.8rem;
 }
 #topnav .logo:is(.dark *){
   --tw-text-opacity: 1 !important;
@@ -2142,12 +2143,6 @@ h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6{
 }
 #topnav .logo:where([dir="rtl"], [dir="rtl"] *){
   float: right !important;
-}
-#topnav .logo .l-dark{
-  display: none;
-}
-#topnav .logo .l-light{
-  display: inline-block;
 }
 #topnav .logo:focus{
   outline: 2px solid transparent;

@@ -1,10 +1,12 @@
 <script lang="ts">
-	import LoginButton from "./LoginButton.svelte";
+	import LoginButton from "./MeButton.svelte";
 	import Logo from "./Logo.svelte";
 	import MobileToggle from "./MobileToggle.svelte";
 	import NavbarDropdownImages from "./NavbarDropdownImages.svelte";
 	import NavbarItemSimple from "./NavbarItemSimple.svelte";
 	import globalStore from '$lib/stores/gloabalStore';
+	import MeButton from "./MeButton.svelte";
+	import { isLoggedIn } from "$lib/firebase/auth";
 
     // const navData = {
     //     label: 'Home',
@@ -106,15 +108,19 @@
 
         <MobileToggle />
 
-        <LoginButton />
+        {#if isLoggedIn()}
+            <MeButton />
+        {/if}
 
         <div id="navigation" class:toggle-open={$globalStore.mobileNavOpen} class:toggle-close={!$globalStore.mobileNavOpen}>
             <!-- Navigation Menu-->   
             <ul class="navigation-menu justify-end nav-light">
                 
                 <!-- <NavbarDropdownImages navData={navData} /> -->
-                <NavbarItemSimple href="/login" label="Login" />
-                <NavbarItemSimple href="/signup" label="Signup" />
+                {#if !isLoggedIn()}
+                    <NavbarItemSimple href="/login" label="Login" />
+                    <NavbarItemSimple href="/signup" label="Signup" />
+                {/if}
             </ul><!--end navigation menu-->
         </div><!--end navigation-->
     </div><!--end container-->

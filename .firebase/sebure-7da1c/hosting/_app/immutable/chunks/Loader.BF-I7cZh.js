@@ -1,0 +1,1 @@
+import"./disclose-version.Bg9kRutz.js";import"./legacy.CPxRCyUd.js";import{a,t as o}from"./template.3bfAoeHZ.js";var v=o('<div id="preloader"><div id="status"><div class="spinner"><div class="double-bounce1"></div> <div class="double-bounce2"></div></div></div></div>');function t(d){var i=v();a(d,i)}export{t as L};

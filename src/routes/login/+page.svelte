@@ -18,7 +18,6 @@
 	};
 </script>
 
-<Loader />
 <section class="md:h-screen py-36 flex items-center relative overflow-hidden zoom-image">
 	<div
 		class="absolute inset-0 image-wrap z-1 bg-[url('/images/bg/01.jpg')] bg-no-repeat bg-center bg-cover"

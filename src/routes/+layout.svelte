@@ -4,14 +4,25 @@
 	import { onAuthStateChanged } from 'firebase/auth';
 	import '../app.css';
 	import { auth } from '$lib/firebase';
+	import Loader from '$lib/components/Loader.svelte';
+	import { onMount } from 'svelte';
+	import { hideLoader } from '$lib/helpers/loader';
+	import { FeatherIcon } from 'svelte-feather-icons';
+
+	let firebaseInitialized = false;
 
 	onAuthStateChanged(auth, (user) => {
-		console.log(user);
+		if (!firebaseInitialized) {
+			firebaseInitialized = true;
+		}
 	});
 </script>
 
-<DarkModeSwitch />
+{#if firebaseInitialized}
+	<DarkModeSwitch />
+	<!-- <LtrRtlSwitch /> -->
+	<slot />
+{:else}
+	<Loader />
+{/if}
 
-<!-- <LtrRtlSwitch /> -->
-
-<slot />

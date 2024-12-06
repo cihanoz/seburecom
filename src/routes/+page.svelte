@@ -2,14 +2,12 @@
 	import BackToTop from "$lib/components/BackToTop.svelte";
 	import Footer from "$lib/components/Footer.svelte";
 	import Hero from "$lib/components/Hero.svelte";
-	import Loader from "$lib/components/Loader.svelte";
 	import Navbar from "$lib/components/Navbar.svelte";
 	import Slider from "$lib/components/Slider.svelte";
 	import Triplets from "$lib/components/Triplets.svelte";
 
 </script>
 
-    <Loader />
         
         <Navbar />
 
@@ -264,6 +262,5 @@
         <!-- End -->
 
         <Footer />
-        
 
         <BackToTop />
