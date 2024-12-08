@@ -1,7 +1,6 @@
 <script>
 	import { goto } from '$app/navigation';
 	import BackFab from '$lib/components/BackFab.svelte';
-	import Loader from '$lib/components/Loader.svelte';
 	import { login } from '$lib/firebase/auth';
 
 	let email = '';

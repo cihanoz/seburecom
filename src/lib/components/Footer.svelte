@@ -97,9 +97,10 @@
         <div class="container relative text-center">
             <div class="grid md:grid-cols-2 items-center gap-6">
                 <div class="md:text-start text-center">
-                    <p class="mb-0 text-gray-300">© {() => new Date().getFullYear()} Hously. Design with <i class="mdi mdi-heart text-red-600"></i> by <a href="https://shreethemes.in/" target="_blank" class="text-reset">Shreethemes</a>.</p>
+                    <p class="mb-0 text-gray-300">© 2024 Sebure. Design with <i class="mdi mdi-heart text-red-600"></i> by <a href="https://sebure.com/" target="_blank" class="text-reset">Sebure</a>.</p>
                 </div>
 
+                {#if false}
                 <ul class="list-none md:text-end text-center">
                     <!-- svelte-ignore a11y_consider_explicit_label -->
                     <li class="inline"><a href="https://1.envato.market/hously" target="_blank" class="btn btn-icon btn-sm text-gray-400 hover:text-white border border-gray-800 dark:border-gray-700 rounded-md hover:border-green-600 dark:hover:border-green-600 hover:bg-green-600 dark:hover:bg-green-600"><i data-feather="shopping-cart" class="size-4"></i></a></li>
@@ -118,8 +119,9 @@
                     <!-- svelte-ignore a11y_consider_explicit_label -->
                     <li class="inline"><a href="mailto:support@shreethemes.in" class="btn btn-icon btn-sm text-gray-400 hover:text-white border border-gray-800 dark:border-gray-700 rounded-md hover:border-green-600 dark:hover:border-green-600 hover:bg-green-600 dark:hover:bg-green-600"><i data-feather="mail" class="size-4"></i></a></li>
                     <!-- svelte-ignore a11y_consider_explicit_label -->
-                    <li class="inline"><a href="https://forms.gle/QkTueCikDGqJnbky9" target="_blank" class="btn btn-icon btn-sm text-gray-400 hover:text-white border border-gray-800 dark:border-gray-700 rounded-md hover:border-green-600 dark:hover:border-green-600 hover:bg-green-600 dark:hover:bg-green-600"><i data-feather="file-text" class="size-4"></i></a></li>
-                </ul><!--end icon-->
+                        <li class="inline"><a href="https://forms.gle/QkTueCikDGqJnbky9" target="_blank" class="btn btn-icon btn-sm text-gray-400 hover:text-white border border-gray-800 dark:border-gray-700 rounded-md hover:border-green-600 dark:hover:border-green-600 hover:bg-green-600 dark:hover:bg-green-600"><i data-feather="file-text" class="size-4"></i></a></li>
+                    </ul><!--end icon-->
+                {/if}
             </div><!--end grid-->
         </div><!--end container-->
     </div>

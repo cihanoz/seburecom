@@ -16,10 +16,6 @@
       "_attributes.js"
     ]
   },
-  "_Loader.js": {
-    "file": "chunks/Loader.js",
-    "name": "Loader"
-  },
   "_attributes.js": {
     "file": "chunks/attributes.js",
     "name": "attributes",
@@ -115,8 +111,7 @@
       "_index2.js",
       "_gloabalStore.js",
       "_attributes.js",
-      "_firebase.js",
-      "_Loader.js"
+      "_firebase.js"
     ],
     "css": [
       "_app/immutable/assets/_layout.DSIuiwf4.css"
@@ -130,8 +125,8 @@
     "imports": [
       "_index2.js",
       "_attributes.js",
-      "_escaping.js",
       "_gloabalStore.js",
+      "_escaping.js",
       "_firebase.js"
     ],
     "css": [
@@ -183,8 +178,13 @@
       "_index2.js",
       "_client.js",
       "_BackFab.js",
-      "_Loader.js",
       "_firebase.js"
     ]
+  },
+  "src/routes/terms-and-conditions/+page.svelte": {
+    "file": "entries/pages/terms-and-conditions/_page.svelte.js",
+    "name": "entries/pages/terms-and-conditions/_page.svelte",
+    "src": "src/routes/terms-and-conditions/+page.svelte",
+    "isEntry": true
   }
 }

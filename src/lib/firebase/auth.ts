@@ -1,5 +1,5 @@
 import { auth, db } from '$lib/firebase'; // Import auth and db from firebase.js
-import { signInWithEmailAndPassword, createUserWithEmailAndPassword } from "firebase/auth";
+import { signInWithEmailAndPassword, createUserWithEmailAndPassword, updateProfile, type User } from "firebase/auth";
 import { doc, setDoc } from "firebase/firestore"; // Import Firestore functions
 
 // Define the type for error messages
@@ -34,7 +34,6 @@ export const login = async (email: string, password: string): Promise<void> => {
         await signInWithEmailAndPassword(auth, email, password).then((userCredential) => {
             console.log(userCredential);
         }).catch((error) => {
-            console.error("Login error:", error);
             alert(errorMessages[error.code] || error.message);
             throw error; // Rethrow error for handling in the component
         });
@@ -45,16 +44,28 @@ export const login = async (email: string, password: string): Promise<void> => {
     }
 };
 
-export const signup = async (email: string, password: string): Promise<void> => {
+export const signup = async (email: string, password: string, firstName: string, lastName: string): Promise<void> => {
     try {
-        const userCredential = await createUserWithEmailAndPassword(auth, email, password);
-        const user = userCredential.user;
+        const userCredential = await createUserWithEmailAndPassword(auth, email, password).then((user) => {
+            return user;
+        }).catch((error) => {
+            alert(errorMessages[error.code] || error.message);
+            throw error; // Rethrow error for handling in the component
+        });
+
+        const user = userCredential.user as User;
 
         // Create a user document in Firestore
         await setDoc(doc(db, "users", user.uid), {
             email: user.email,
             uid: user.uid,
+            firstName: firstName,
+            lastName: lastName,
             // Add any other user data you want to store
+        });
+
+        await updateProfile(user, {
+            displayName: `${firstName} ${lastName}`,
         });
 
         // Handle successful signup

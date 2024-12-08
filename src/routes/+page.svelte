@@ -33,12 +33,15 @@
                     <div class="md:col-span-7">
                         <div class="lg:ms-4">
                             <h4 class="mb-6 md:text-3xl text-2xl lg:leading-normal leading-normal font-semibold">Efficiency. Transparency. <br> Control.</h4>
-                            <p class="text-slate-400 max-w-xl">Hously developed a platform for the Real Estate marketplace that allows buyers and sellers to easily execute a transaction on their own. The platform drives efficiency, cost transparency and control into the hands of the consumers. Hously is Real Estate Redefined.</p>
+                            <p class="text-slate-400 max-w-xl">Sebure developed a platform for the Real Estate marketplace that allows buyers and sellers to easily execute a transaction on their own. The platform drives efficiency, cost transparency and control into the hands of the consumers. Sebure is Real Estate Redefined.</p>
                             
+                            {#if false}
+                            // TODO: Create a blog page
                             <div class="mt-4">
                                 <!-- svelte-ignore a11y_invalid_attribute -->
                                 <a href="" class="btn bg-green-600 hover:bg-green-700 text-white rounded-md mt-3">Learn More </a>
                             </div>
+                            {/if}
                         </div>
                     </div><!--end col-->
                 </div><!--end grid-->
@@ -125,7 +128,7 @@
                         <div class="tiny-three-item">
                             <div class="tiny-slide">
                                 <div class="text-center mx-3">
-                                    <p class="text-lg text-slate-400 italic"> " Hously made the processes so easy. Hously instantly increased the amount of interest and ultimately saved us over $10,000. " </p>
+                                    <p class="text-lg text-slate-400 italic"> " Sebure made the processes so easy. Sebure instantly increased the amount of interest and ultimately saved us over $10,000. " </p>
 
                                     <div class="text-center mt-5">
                                         <ul class="text-xl font-medium text-amber-400 list-none mb-2">
@@ -145,7 +148,7 @@
 
                             <div class="tiny-slide">
                                 <div class="text-center mx-3">
-                                    <p class="text-lg text-slate-400 italic"> " I highly recommend Hously as the new way to sell your home "by owner". My home sold in 24 hours for the asking price. Best $400 you could spend to sell your home. " </p>
+                                    <p class="text-lg text-slate-400 italic"> " I highly recommend Sebure as the new way to sell your home "by owner". My home sold in 24 hours for the asking price. Best $400 you could spend to sell your home. " </p>
 
                                     <div class="text-center mt-5">
                                         <ul class="text-xl font-medium text-amber-400 list-none mb-2">
@@ -205,7 +208,7 @@
 
                             <div class="tiny-slide">
                                 <div class="text-center mx-3">
-                                    <p class="text-lg text-slate-400 italic"> " Hously made selling my home easy and stress free. They went above and beyond what is expected. " </p>
+                                    <p class="text-lg text-slate-400 italic"> " Sebure made selling my home easy and stress free. They went above and beyond what is expected. " </p>
 
                                     <div class="text-center mt-5">
                                         <ul class="text-xl font-medium text-amber-400 list-none mb-2">
@@ -225,7 +228,7 @@
 
                             <div class="tiny-slide">
                                 <div class="text-center mx-3">
-                                    <p class="text-lg text-slate-400 italic"> " Hously is fair priced, quick to respond, and easy to use. I highly recommend their services! " </p>
+                                    <p class="text-lg text-slate-400 italic"> " Sebure is fair priced, quick to respond, and easy to use. I highly recommend their services! " </p>
 
                                     <div class="text-center mt-5">
                                         <ul class="text-xl font-medium text-amber-400 list-none mb-2">
@@ -261,6 +264,6 @@
         </section><!--end section-->
         <!-- End -->
 
-        <Footer />
+        <!-- <Footer /> -->
 
         <BackToTop />
