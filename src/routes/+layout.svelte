@@ -19,7 +19,7 @@
 </script>
 
 {#if firebaseInitialized}
-	<DarkModeSwitch />
+	<!-- <DarkModeSwitch /> -->
 	<!-- <LtrRtlSwitch /> -->
 	<slot />
 {:else}

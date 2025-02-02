@@ -4588,3 +4588,12 @@ html[dir=rtl] .tns-visually-hidden {
 .rtl\:text-end:where([dir="rtl"], [dir="rtl"] *){
   text-align: end !important;
 }
+
+/* Custom CSS */
+.toggle-open {
+  display: block;
+}
+
+.toggle-close {
+  display: none;
+}

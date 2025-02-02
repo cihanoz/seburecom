@@ -126,13 +126,3 @@
     </div><!--end container-->
 </nav><!--end header-->
 <!-- End Navbar -->
-
-<style>
-    .toggle-open {
-        display: block;
-    }
-
-    .toggle-close {
-        display: none;
-    }
-</style>
